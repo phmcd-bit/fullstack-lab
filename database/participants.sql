@@ -1,3 +1,5 @@
--- Retorne o nome de cada participante do evento :event_id, em ordem de nome.
--- Consulte users e registrations; o teste fornece o parâmetro :event_id.
-SELECT NULL WHERE 0;
+SELECT u.name
+FROM registrations r
+JOIN users u ON r.user_id = u.id
+WHERE r.event_id = :event_id
+ORDER BY u.name;
